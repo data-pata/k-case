@@ -15,7 +15,7 @@ run:
 	${ERL} -noshell -s matrix start -s init stop
 
 shell: compile
-	${ERL} -s matrix start -s
+	${ERL} -s matrix start
 
 clean:
 	rm -rf *.beam erl_crash.dump
