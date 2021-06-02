@@ -12,10 +12,10 @@ all: compile run
 compile: ${MODS:%=%.beam}
 
 run:
-	${ERL} -s matrix start
-
-oneoff: compile
 	${ERL} -noshell -s matrix start -s init stop
+
+shell: compile
+	${ERL} -s matrix start -s
 
 clean:
 	rm -rf *.beam erl_crash.dump
