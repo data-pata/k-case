@@ -5,7 +5,7 @@
 
 ERL = erl -boot start_clean
 
-MODS = matrix concmatrix worker
+MODS = matrix concmatrix worker concmatrix_tests
 
 compile: ${MODS:%=%.beam}
 
@@ -16,8 +16,11 @@ seq: compile
 	${ERL} -noshell -s matrix start -s init stop
 	
 shell: compile
-	${ERL} -s matrix start -s
+	${ERL} -s matrix start
 	${ERL} -s concmatrix start
+
+test: compile
+	${ERL} -s concmatrix_tests start
 
 clean:
 	rm -rf *.beam erl_crash.dump

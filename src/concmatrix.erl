@@ -19,7 +19,8 @@ start() ->
         {Super, {D, Q}} ->
             Time = timer(read),
             print_result(D, Q, Time)
-    end.
+    end,
+    {D, Q}.
 
 start_super(Matrix, FromPid) ->
     NumRows = length(Matrix),
