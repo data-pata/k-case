@@ -1,6 +1,7 @@
 -module(matrix).
 
 -export([start/0]).
+
 -compile(export_all).
 
 % -define(MATRIX_FILE, filelib:wildcard("../assets/matrix.in")).
@@ -11,8 +12,7 @@ start() ->
   Checksum1 = part1(Matrix),
   Checksum2 = part2(Matrix),
   io:format("Part 1 Checksum: ~p~nPart2 Checksum: ~p~n",
-    [Checksum1, Checksum2])
-  .   
+    [Checksum1, Checksum2]).   
 
 %% -------------------------------------
 %% PART 2 CALCULATIONS 
@@ -42,7 +42,7 @@ find_dividend(Divisor, Nums) ->
   true_div(X, Y) -> X rem Y == 0.
 
 
-%% -------------------------------------
+%% -------------------------------------u
 %% PART 1 CALCULATIONS 
 % ------------------------------------- 
 part1(Matrix) ->
@@ -59,9 +59,9 @@ checksum(Matrix) ->
   Checksum.
 
 %% @doc return tuple of min and max value in given list of numbers
-min_n_max(Nums) ->
-  Min = lists:min(Nums),
-  Max = lists:max(Nums),
+min_n_max(NumList) ->
+  Min = lists:min(NumList),
+  Max = lists:max(NumList),
   {Min, Max}.
 
 %% -------------------------------------
